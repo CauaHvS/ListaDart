@@ -2,7 +2,7 @@ import 'dart:convert';
 import 'dart:io';
 
 void main() {
-  //area();
+  area();
 
   //idadeDias();
 
@@ -23,7 +23,7 @@ void area() {
   double area = 0;
   area = (altura * largura) / 2;
 
-  print(area);
+  print('A area do local é de ${area}m');
 }
 
 void idadeDias() {
