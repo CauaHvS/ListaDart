@@ -53,8 +53,9 @@ get numero_conta => _numero_conta;
 void main(){
 
   int? opcao;
-
+  int numconta = 1;
   do{
+    
     stdout.write("1. Abrir Conta\n");
     stdout.write("2.Sacar\n");
     stdout.write("3.Depositar\n");
@@ -62,6 +63,36 @@ void main(){
     stdout.write("5.Imprimir conta\n");
     stdout.write("6.Sair\n");
     var opcao = int.parse(stdin.readLineSync()!);
+    
+    switch(opcao){
+      
+      case 1:
+        
+        stdout.write("Olá você está criando uma nova conta bancaria!\nPrecisaremos de alguns dados para a criação da conta.\n");
+        stdout.write("\n");
+        stdout.write("Favor informe o numero da conta:");
+        var numero_conta = int.parse(stdin.readLineSync()!);
+        stdout.write("\n");
+        stdout.write("Favor informe o seu nome:");
+        var nome_cliente = stdin.readLineSync()!;
+        stdout.write("\n");
+        stdout.write("Favor informe o seu saldo:");
+        var saldo_cliente = double.parse(stdin.readLineSync()!);
+        stdout.write("\n");
+        stdout.write("Favor informe o seu limite de credito:");
+        var limite_cliente = double.parse(stdin.readLineSync()!);
+        stdout.write("\n");
+        
+        var conta = Conta_bancaria(numero_conta, nome_cliente, saldo_cliente, limite_cliente);
+        stdout.write("Conta Aberta!\n");
+        
+        numconta++;
+        print("$numconta");
+        break;
+      case 2:
+        print("Sacando");
+        
+    }
     
   }while(opcao != 6);
   
